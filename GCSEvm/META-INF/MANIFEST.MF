@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Pega-Codeset-Patch: 
+Engine-Version: 07-10-35
+Pega-Codeset-Version: 06-01-01
+ArtifactName: LifeAtPega
+Synchronizable: false
+ArtifactVersion: 01.01.01
+Type: Product
+Product-Creation-Date: 2019-Aug-09 00:00:00
+PRPC-Engine: 7.4.0 PRPC-7.4.0-185 ()
+Operator: Administrator@LifeAtPega
+ArtifactType: application
+Pega-Archive-Type: ApplicationBundle
+Name: LifeAtPega_010101_20190809T093126_GMT.zip
+Archive-Type: PegaArchive
+Export-Date: 2019-Aug-09 15:01:30
+Pega-Codeset-Name: Customer
+Instance-Count: 1752
+
+Name: FileMetadata
+

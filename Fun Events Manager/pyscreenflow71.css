@@ -1,0 +1,229 @@
+﻿/* Tabbed screen-flow styling */
+
+#ScreenFlowTabs,
+#ScreenFlowTabs ul,
+#ScreenFlowTabs li,
+#ScreenFlowTabs a,
+.ScreenFlowTree,
+.ScreenFlowTree ul,
+.ScreenFlowTree li,
+.ScreenFlowTree a {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+#ScreenFlowTabs {
+    margin-left: 21px;
+}
+
+
+/* tabbed screenflow styles */
+
+#ScreenFlowTabs ul {
+    margin: 30px 0;
+    padding: 0;
+    counter-reset: steps;
+}
+
+#ScreenFlowTabs ul li {
+    list-style: none;
+    position: relative;
+    float: left;
+    min-width: 100px;
+    padding-top: 25px;
+    padding-right: 2em;
+    border-top: 3px solid #e8e8e8;
+    color: #3f3f3f;
+    font-size: 14px;
+    line-height: 14px;
+    margin-bottom: 25px;
+    counter-increment: steps;
+    /* Increment the counter by 1 */
+}
+
+
+/* when shapes in flow are marked to hide at runtime, hide the step */
+
+#ScreenFlowTabs ul li.hidden {
+    display: none;
+}
+
+#ScreenFlowTabs ul #current {
+    color: #2da0ba;
+}
+
+#ScreenFlowTabs ul #success {
+    color: #838e88;
+}
+
+#ScreenFlowTabs ul li:last-child {
+    border: none;
+    margin-top: 3px;
+    /* same DOM height value as the border width */
+}
+
+#ScreenFlowTabs ul li.ie8-last-child {
+    border: none;
+    margin-top: 3px;
+    /* same DOM height value as the border width */
+}
+
+#ScreenFlowTabs ul li a:before {
+    content: counter(steps);
+    background: #cde3e8;
+    border-radius: 50%;
+    padding: 9px 0;
+    position: absolute;
+    top: -18px;
+    text-align: center;
+    width: 33px;
+}
+
+#ScreenFlowTabs ul li#success:before {
+    background: #838e88;
+    color: #fff;
+}
+
+#ScreenFlowTabs ul li#current a:before {
+    background: #23609d;
+    color: #fff;
+    width: 37px;
+    padding: 11px 0;
+    top: -20px;
+}
+
+
+/*START: SE-27560*/
+
+#ScreenFlowTabs ul li#currenterror a:before {
+    background: #23609d;
+    color: #fff;
+    width: 37px;
+    padding: 11px 0;
+    top: -20px;
+}
+
+
+/*END: SE-27560*/
+
+
+/* Vertical screen-flow styling */
+
+.tree-nav-area {
+    padding-left: 10px;
+    /* padding for content area away from tree nav */
+}
+
+.ScreenFlowTree {
+    border: 1px solid #ccc;
+}
+
+.ScreenFlowTree li > a {
+    min-width: 250px;
+    font-size: 13px;
+    color: #1e1e1e;
+    display: block;
+    box-sizing: border-box;
+    border-bottom: 1px solid white;
+    padding-left: 32px;
+    padding-right: 14px;
+    height: 32px;
+    line-height: 32px
+}
+
+.ScreenFlowTree li > a > span {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ScreenFlowTree .ScreenFlowSubTree li > a {
+    background: #e7f0f2;
+    border-bottom: 1px solid white;
+    padding-left: 48px;
+}
+
+.ScreenFlowTree .ScreenFlowSubTree .ScreenFlowSubTree li > a {
+    padding-left: 64px;
+}
+
+.ScreenFlowTree .ScreenFlowSubTree .ScreenFlowSubTree .ScreenFlowSubTree li > a {
+    padding-left: 80px;
+}
+
+.ScreenFlowTree .ScreenFlowSubTree li.expanded > a {
+    background: url('webwb/pyiconarrow-down.png') no-repeat 16px 50% #cde3e8;
+    border-bottom: 1px solid white;
+}
+
+.ScreenFlowTree li > a.success {
+    background: url('webwb/pyicon-checkmark.png') no-repeat 16px 50% transparent;
+    color: #777777;
+}
+
+.ScreenFlowSubTree li > a.success {
+    padding-left: 48px;
+    background-position-x: 32px;
+    background-color: #e7f0f2;
+}
+
+.ScreenFlowSubTree .ScreenFlowSubTree li > a.success {
+    background-position-x: 48px;
+}
+
+.ScreenFlowSubTree .ScreenFlowSubTree .ScreenFlowSubTree li > a.success {
+    background-position-x: 64px;
+}
+
+.ScreenFlowTree li.parent-node > a {
+    background-color: #cde3e8;
+    padding-left: 32px;
+    font-weight: bold;
+    border-bottom: 1px solid #fff;
+}
+
+.ScreenFlowTree li.expanded > a {
+    background: url('webwb/pyiconarrow-down.png') no-repeat 16px 50% #cde3e8;
+    border-bottom: 1px solid white;
+    color: #1e1e1e;
+    font-weight: bold;
+}
+
+.ScreenFlowTree li.collapsed > a {
+    background: url('webwb/pyiconarrow-right.png') no-repeat 16px 50% #e7f0f2;
+    border-bottom: 1px solid white;
+    color: #1e1e1e;
+    font-weight: bold;
+}
+
+.ScreenFlowTree .ScreenFlowSubTree li.expanded > a,
+.ScreenFlowTree .ScreenFlowSubTree li.collapsed > a {
+    background-position: 32px 50%;
+}
+
+.ScreenFlowSubTree .ScreenFlowSubTree li.expanded > a,
+.ScreenFlowSubTree .ScreenFlowSubTree li.collapsed > a {
+    background-position: 48px 50%;
+}
+
+.ScreenFlowTree li > a.current,
+.ScreenFlowTree li > a.currenterror {
+    background: #23609d !important;
+    color: #fff !important;
+    position: relative;
+}
+
+.ScreenFlowTree li > a.current:after,
+.ScreenFlowTree li > a.currenterror:after {
+    content: '';
+    display: block;
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    border-right: 12px solid #23609d;
+    position: absolute;
+    right: 100%;
+    top: 0;
+}
